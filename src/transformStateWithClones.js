@@ -12,10 +12,10 @@ function transformStateWithClones(state, actions) {
   const REMOVE_PROPERTIES = 'removeProperties';
   const CLEAR = 'clear';
 
-  let currentState = structuredClone(state);
+  let currentState = { ...state };
 
   for (const action of actions) {
-    let stateCopy = structuredClone(currentState);
+    let stateCopy = { ...currentState };
 
     switch (action.type) {
       case ADD_PROPERTIES:
